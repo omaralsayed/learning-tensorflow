@@ -4,17 +4,27 @@
 # predict a 7 bedroom house as costing close to 400k etc.
 # Hint: Your network might work better if you scale the house price down. You don't have to give the answer 400...it might 
 # be better to create something that predicts the number 4, and then your answer is in the 'hundreds of thousands' etc.
+# ------------------------------------------------------------------------------------------------------------------------
 
+# Import libraries
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
 
+# Create a one layer neural network
 model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])])
+
+# Measure loss and pass to optimizer to obtain next guess
 model.compile(optimizer='sgd', loss='mean_squared_error')
 
+# Use numpy to create two arrays (xs and ys)
 xs = np.array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], dtype=float)
 ys = np.array([1.0, 1.5, 2.0, 2.5, 3.0, 3.5], dtype=float)
-
+ 
+# Pass the entire dataset in both forward and backward directions
+# through the neural network 500 times
 model.fit(xs, ys, epochs=500)
 
+# Display the prediction that the neural network has
+# for a 7 bedroom house
 print(model.predict([7.0]))
