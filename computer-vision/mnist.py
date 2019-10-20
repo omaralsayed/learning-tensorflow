@@ -47,7 +47,6 @@ model = keras.Sequential([
 mnist = tf.keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 
-
 # First image in array
 plt.imshow(train_images[0])
 print(training_labels[0])
