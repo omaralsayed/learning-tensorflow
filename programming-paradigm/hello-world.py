@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 from tensorflow import keras
 
-# A neural network is basically a set of functions which can learn patters.
+# A neural network is basically a set of functions which can learn patterns.
 # In keras, you use the word dense to define a layer of connected neurons. 
 # There's only one dense here. So there's only one layer and there's only one 
 # unit in it, so it's a single neuron. Successive layers are defined in sequence, 
